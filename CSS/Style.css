@@ -149,14 +149,46 @@ main img{
     padding-bottom: 20px;
 }
 .char.plain{
-    border: 1px solid#000000;
-    color: #000;
-    font-size: 18px;
+    border-right: 2px solid#237ac6;
+    color: black;
+    font-size: 28px;
+    padding-right: 5px;
+    padding-left: 3px;
+    text-align: center;
 }
-#plaintext-chars{
-    background-color: white;  
+.char.cypher img{
+    border-right: 2px solid #237ac6;
+    width: 23.3px;
+    height: 22px;
+}
 
+#plaintext-chars{
+    position: absolute;
+    left: 140px;
+    top: 80px;
+    background-color: white;  
+    border: 1px solid #000000;
+    font-size: 0;
+    display: inline-block;
+   
+}
+#mapping{
+    position: absolute;
+    left: 140px;
+    top: 120px;
+}
+#cyphertext-chars{
+    position: absolute;
+    left: 140px;
+    top: 150px;
+    display: inline-block;
+    font-size: 0;
+}
+.highlight-arrow{
+    font-size: 125%;
 }
 #encryption{
-    width: 500px;
+    position: relative;
+    width: 800px;
 }
+

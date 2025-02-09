@@ -1,14 +1,22 @@
 const plainText = document.getElementById("plaintext-chars");
+const highlightArrow = document.getElementById("mapping");
+const cypherText = document.getElementById("cyphertext-chars");
 function displayLetters(startChar, charCount) {
     let elementSpan = '';
     for (let i = 0; i < charCount; i++) {
         const letter = String.fromCharCode(i + startChar);
-        elementSpan = `
-         <span class="char plain">${letter}</span>
-        `
-        plainText.innerHTML += elementSpan;
+        elementText = `
+            <span class="char plain">${letter}</span>
+        `;
+        plainText.innerHTML += elementText;
+        elementArrow = `
+            <span class="highlight-arrow"><ion-icon name="arrow-up"></ion-icon></span>
+        `;
+        highlightArrow.innerHTML += elementArrow;
+        elementCypher = `
+            <span class="char cypher"><img src="/Image/pigpen-0-1.png"></span>
+        `;
+        cypherText.innerHTML += elementCypher;
     }
 }
-
-// Ví dụ sử dụng với ký tự bắt đầu là 'A' (Unicode 65) và xét 26 chữ cái
 displayLetters(65, 26);
