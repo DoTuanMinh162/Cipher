@@ -156,11 +156,17 @@ main img{
     padding-left: 3px;
     text-align: center;
 }
+.char.cypher{
+    position: relative;
+    background-color: white;
+   
+}
 .char.cypher img{
     border-right: 2px solid #237ac6;
     width: 23.3px;
     height: 22px;
-    background-color: #237ac6;
+    /* box-shadow: 1px 2px 8px yellow; */
+    
 }
 .char.cypher2 img{
     width: 23.3px;
