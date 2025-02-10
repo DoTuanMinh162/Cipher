@@ -14,7 +14,7 @@ function displayLetters(startChar, charCount) {
         `;
         highlightArrow.innerHTML += elementArrow;
         elementCypher = `
-            <span class="char cypher"><img src="/Image/pigpen-0-1.png"></span>
+            <span class="char cypher"><img src="/Image/pigpen-0-${i+1}.png"></span>
         `;
         cypherText.innerHTML += elementCypher;
     }
