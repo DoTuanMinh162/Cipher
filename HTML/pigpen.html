@@ -22,18 +22,19 @@
             <h2>Inputs and Outputs</h2>
 
             <div id="plaintext" class="group">
-                <h3>Plain Text</h3>
-                <input type="text" id="plaintext-text" class="plaintext-text">
+                <h3 style="font-size: 24px;">Plain Text</h3>
+                <input type="text" id="plaintext-text" class="plaintext-text" pattern="[A-Za-z\s]+" oninput="convertToPigpen()">
             </div>
 
             <div id="options" class="group">
-                <h3 class="key">Key <span class="sub-heading">(note shape containing each letter)</span></h3>
+                <h3 class="key" style="font-size: 20px;">Key <span class="sub-heading">(note shape containing each letter)</span></h3>
                 <img src="/Image/pigpen.svg" alt="Pigpen cypher symbols">
             </div>
 
             <div id="cyphertext" class="group">
-                <h3 class="cypher">Cypher Text</h3>
-                <input type="text" id="cyphertext-text" class="cyphertext-text">
+                <h3 class="cypher" style="font-size: 24px;">Cypher Text</h3>
+                <div id="cyphertext-text" class="cyphertext-text"></div>
+
             </div>
         </section>
 

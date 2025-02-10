@@ -160,8 +160,12 @@ main img{
     border-right: 2px solid #237ac6;
     width: 23.3px;
     height: 22px;
+    background-color: #237ac6;
 }
-
+.char.cypher2 img{
+    width: 23.3px;
+    height: 22px;
+}
 #plaintext-chars{
     position: absolute;
     left: 140px;
@@ -190,5 +194,25 @@ main img{
 #encryption{
     position: relative;
     width: 800px;
+}
+#plaintext-text{
+    width: 550px;
+    height: 60px;
+    font-size: 22px;
+    padding-left: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    background-color: #26C6DA;
+    border: 2px solid white;
+}
+#cyphertext-text{
+    width: 550px;
+    height: 60px;
+    font-size: 20px;
+    padding-left: 10px;
+    background-color: white;
+    border: 2px solid white;
+    overflow-x: scroll;
+    font-size: 0;
 }
 
