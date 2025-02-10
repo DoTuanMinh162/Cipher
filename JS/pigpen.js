@@ -1,6 +1,7 @@
 const plainText = document.getElementById("plaintext-chars");
 const highlightArrow = document.getElementById("mapping");
 const cypherText = document.getElementById("cyphertext-chars");
+// hiển thị chữ cái và kí tự pigpen
 function displayLetters(startChar, charCount) {
     for (let i = 0; i < charCount; i++) {
         const letter = String.fromCharCode(i + startChar);
@@ -19,7 +20,7 @@ function displayLetters(startChar, charCount) {
     }
 }
 displayLetters(65, 26);
-//   box-shadow: 1px 2px 8px yellow;
+// convert chữ cái nhập sang kí tự pigpen 
 function convertToPigpen(){
     const inputText = document.getElementById("plaintext-text").value;
     const arrowConvert = document.querySelectorAll('.highlight-arrow');
@@ -28,6 +29,7 @@ function convertToPigpen(){
     // console.log(textConvert)
     const lastChar = inputText.charAt(inputText.length - 1);
     let idToCheck = 0;
+    // đổi màu chữ cái, kí tự pigpen, mũi tên khi nhập (đổi màu kí tự vừa nhập)
     if(lastChar.charCodeAt(0) >= 65 && lastChar.charCodeAt(0) <= 90){
         idToCheck = lastChar.charCodeAt(0) - 64;
         Array.from(textConvert).forEach(elementText => {
@@ -86,7 +88,7 @@ function convertToPigpen(){
         });
         
     }
-    
+    // convert kí tự chữ cái sang kí tự pigpen
     document.getElementById('cyphertext-text').innerHTML = '';
     for(let i=0;i<inputText.length;i++){
         // console.log(inputText.length);
@@ -104,3 +106,19 @@ function convertToPigpen(){
     }
 
 }
+// function vẽ biểu đồ tần suất xuất hiện của chữ cái và kí tự pigpen
+// xử lí input mặc định (hello world) => mục đích để auto hiển thị biểu đồ khi vào trang pigpen
+document.addEventListener("DOMContentLoaded", () => {
+    const chars = document.getElementById("plaintext-text").value;
+    for(let i = 0; i < chars.length; i++){
+        if(chars.charCodeAt(i) >= 65 && chars.charCodeAt(i) <= 90){
+            document.getElementById('cyphertext-text').innerHTML +=  `
+                <span class="char cypher2"><img src="/Image/pigpen-0-${chars.charCodeAt(i)-64}.png"></span>
+            `
+        } else if (chars.charCodeAt(i) >= 97 && chars.charCodeAt(i) <= 122){
+            document.getElementById('cyphertext-text').innerHTML +=  `
+                <span class="char cypher2"><img src="/Image/pigpen-0-${chars.charCodeAt(i)-96}.png"></span>
+            `
+        } 
+    }
+})
