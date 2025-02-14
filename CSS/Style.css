@@ -221,4 +221,9 @@ main img{
     overflow-x: scroll;
     font-size: 0;
 }
+#charts{
+    position: relative;
+    width: 700px;
+    top: 20px;
+}
 

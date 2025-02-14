@@ -104,9 +104,56 @@ function convertToPigpen(){
         } 
         
     }
+    countFrequency(inputText);
 
 }
+//function tính tần suất xuất hiện của từng chữ cái trong input
+function countFrequency(stringInput){
+    const frequency = Array(26).fill(0);
+    for (let char of stringInput.toUpperCase()){
+        if (char >= 'A' && char <= 'Z') {
+            const index = char.charCodeAt(0) - 'A'.charCodeAt(0);  
+            frequency[index] += 1;
+        }
+    }
+    drawChart(frequency);
+}
 // function vẽ biểu đồ tần suất xuất hiện của chữ cái và kí tự pigpen
+function drawChart(frequencyData){
+    if (window.myChart) {
+        window.myChart.destroy();
+    }
+    const labels = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    const chartData = {
+                labels: labels,
+                datasets: [{
+                    label: 'Frequency of appearance',
+                    data: frequencyData,
+                    backgroundColor: 'rgba(53, 160, 231, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            // Tạo biểu đồ
+            const config = {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            // Vẽ biểu đồ lên canvas
+            window.myChart = new Chart(
+                document.getElementById('plaintext-chart'),
+                config
+            );
+}
 // xử lí input mặc định (hello world) => mục đích để auto hiển thị biểu đồ khi vào trang pigpen
 document.addEventListener("DOMContentLoaded", () => {
     const chars = document.getElementById("plaintext-text").value;
@@ -121,4 +168,5 @@ document.addEventListener("DOMContentLoaded", () => {
             `
         } 
     }
+    countFrequency(chars);
 })
