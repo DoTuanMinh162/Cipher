@@ -159,7 +159,17 @@ main img{
 .char.cypher{
     position: relative;
     background-color: white;
-   
+}
+.char.caesar{
+    color: black;
+}
+.char.caesar2{
+    border-right: 2px solid#237ac6;
+    color: black;
+    font-size: 28px;
+    padding-right: 5px;
+    padding-left: 3px;
+    text-align: center;
 }
 .char.cypher img{
     border-right: 2px solid #237ac6;
@@ -192,6 +202,7 @@ main img{
     left: 140px;
     top: 150px;
     display: inline-block;
+    background-color: white;
     font-size: 0;
 }
 .highlight-arrow{
@@ -221,9 +232,31 @@ main img{
     overflow-x: scroll;
     font-size: 0;
 }
+#cyphertext-text2{
+    width: 550px;
+    height: 60px;
+    font-size: 27px;
+    padding-left: 10px;
+    background-color: white;
+    border: 2px solid white;
+    overflow-x: scroll;
+    
+    text-transform: uppercase;
+}
+.char.caesar{
+    margin-left: -8px;
+}
+
+#key-value{
+    width: 40px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
 #charts{
     position: relative;
     width: 700px;
     top: 20px;
 }
+
 

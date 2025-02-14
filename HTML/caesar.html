@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/CSS/Style.css">
 </head>
 
-<body onload="setup( CAESAR );">
+<body>
 
     <header id="mainheader">
         <h1>The Caesar Cypher <a target="_blank" href="https://en.wikipedia.org/wiki/Caesar_cipher"><i class="icon-link-ext"></i></a></h1>
@@ -19,17 +19,17 @@
 
             <div id="plaintext" class="group">
                 <h3>Plain Text</h3>
-                <input type="text" id="plaintext-text" class="plaintext-text">
+                <input type="text" id="plaintext-text" class="plaintext-text" oninput="convertToCaesar()"> 
             </div>
 
             <div id="options" class="group">
                 <h3 class="key">Key (Shift)</h3>
-                <input type="number" id="key-value" class="key-value" value="0" min="0" max="25">
+                <input type="number" id="key-value" class="key-value" value="0" min="0" oninput="convertToCaesar()">
             </div>
         
             <div id="cyphertext" class="group">
                 <h3 class="cypher">Cypher Text</h3>
-                <input type="text" id="cyphertext-text" class="cyphertext-text">
+                <div type="text" id="cyphertext-text2" class="cyphertext-text"></div>
             </div>
         </section>
 
