@@ -21,9 +21,9 @@ function convertToCaesar (){
 }
 
 function displayLetters(startChar, charCount, k) {
-    plainText2.innerHTML = "";
-    cypherText2.innerHTML = "";
-    highlightArrow.innerHTML = "";
+    plainText2.innerHTML = '';
+    cypherText2.innerHTML = '';
+    highlightArrow.innerHTML = '';
     for (let i = 0; i < charCount; i++) {
         const letter= String.fromCharCode(i + startChar);
         const elementText = `
@@ -38,12 +38,11 @@ function displayLetters(startChar, charCount, k) {
             <span class="highlight-arrow" data-id="${i+1}"><ion-icon name="arrow-down"></ion-icon></span>
         `;
         highlightArrow.innerHTML += elementArrow;
-
         cypherText2.innerHTML += elementCaesar;
     }
 }
 
-key.addEventListener("change", () => {
+key.addEventListener("input", () => {
     let k = parseInt(key.value);
     displayLetters(65,26, k);
 })
