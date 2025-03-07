@@ -68,16 +68,16 @@ function convertToPigpen(){
                 elementText.style.backgroundColor = "white";
             }
         });
-        // Array.from(cypherConvert).forEach(elementCypher => {
-        //     const idDataOfElement = parseInt(elementCypher.getAttribute("data-id"));
-        //     if(idDataOfElement === parseInt(idToCheck)){
-        //         elementCypher.querySelector("img").style.boxShadow = "0px 4px 8px yellow";
-        //         elementCypher.querySelector("img").style.zIndex = "10";
-        //     } else {
-        //         elementCypher.querySelector("img").style.boxShadow = "none";
-        //         elementCypher.querySelector("img").style.zIndex = "1";
-        //     }
-        //});
+        Array.from(cypherConvert).forEach(elementCypher => {
+            const idDataOfElement = parseInt(elementCypher.getAttribute("data-id"));
+            if(idDataOfElement === parseInt(idToCheck)){
+                elementCypher.querySelector("img").style.boxShadow = "0px 4px 8px yellow";
+                elementCypher.querySelector("img").style.zIndex = "10";
+            } else {
+                elementCypher.querySelector("img").style.boxShadow = "none";
+                elementCypher.querySelector("img").style.zIndex = "1";
+            }
+        });
         Array.from(arrowConvert).forEach(elementArrow => {
             const idDataOfElement = parseInt(elementArrow.getAttribute("data-id"));
             if(idDataOfElement === parseInt(idToCheck)){
